@@ -1,7 +1,6 @@
 import math
 
 def find_powerset(num_items, items):
-    pow_size = (int) (math.pow(2, num_items))
     pow_set = [[]]
     for item in items:
         set = [new+[item] for new in pow_set]
@@ -28,7 +27,9 @@ def heuristic(items, weight_cap):
     curr_weight = weight_cap
     knapsack = []
     sol = 0
-    items.sort(key = lambda x: x[1]/x[0])
+
+    items.sort(key = lambda x: (float(x[1]/x[0]), x[1]), reverse = True)
+
     for item in items:
         if item[0] <= curr_weight:
             knapsack.append(item)
@@ -38,7 +39,7 @@ def heuristic(items, weight_cap):
 
 
 def start(file_name):   
-    weight_cap = 0      # initalize vars. and lists
+    weight_cap = 0     # initalize vars. and lists
     uniq_items = 0
     weights = []
     values = []
@@ -49,19 +50,20 @@ def start(file_name):
             if weight_cap == 0: weight_cap = (int) (line); continue     # determine weight cap. & # unique items
             if uniq_items == 0: uniq_items = (int) (line); continue
 
-            for i, var in enumerate(line.split()):      # create weight & value lists
+            for i, var in enumerate(line.split()):          # create weight & value lists
                 if i % 2 == 0: weights.append(int(var))
                 if i % 2 != 0: values.append(int(var))
     
-    for i in range(uniq_items):                 # combine lists
+    for i in range(uniq_items):                             # combine lists
         items.append((weights[i], values[i]))
 
-    powerset = find_powerset(uniq_items, items)     # call powerset function
-
+    powerset = find_powerset(uniq_items, items)             # call powerset function
     exh_set, exh_sol = exhaustive(powerset, weight_cap)     # call functions for both approaches
     heu_set, heu_sol = heuristic(items, weight_cap)
 
-    print("Exh. Sol. : ", exh_sol, " ", exh_set)        # print solutions
+    print("Exh. Sol. : ", exh_sol, " ", exh_set)            # print solutions
     print("Heu. Sol. : ", heu_sol, " ", heu_set)
 
+start('input2.txt')
 start('input.txt')
+start('input3.txt')
