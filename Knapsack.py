@@ -27,9 +27,9 @@ def heuristic(items, weight_cap):
     curr_weight = weight_cap
     knapsack = []
     sol = 0
-
+    print('starting sort')
     items.sort(key = lambda x: (float(x[1]/x[0]), x[1]), reverse = True)
-
+    print('sorting')
     for item in items:
         if item[0] <= curr_weight:
             knapsack.append(item)
@@ -59,10 +59,13 @@ def start(file_name):
 
     powerset = find_powerset(uniq_items, items)             # call powerset function
     exh_set, exh_sol = exhaustive(powerset, weight_cap)     # call functions for both approaches
+    print('starting heuristic')
     heu_set, heu_sol = heuristic(items, weight_cap)
 
     print("Exh. Sol. : ", exh_sol, " ", exh_set)            # print solutions
     print("Heu. Sol. : ", heu_sol, " ", heu_set)
+
+
 
 start('input2.txt')
 start('input.txt')
