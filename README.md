@@ -3,6 +3,7 @@ The Knapsack Problem is defined as follows:  A thief robbing a store findsnitems
 
 # Solution Methods
 Exhaustive Apprach
+```
   Let powerSet = all subsets
   knapsack = { } 
   bestValue = 0
@@ -16,3 +17,4 @@ Exhaustive Apprach
       bestValue = subsetValue
       knapsack = subset
   return knapsack
+```
