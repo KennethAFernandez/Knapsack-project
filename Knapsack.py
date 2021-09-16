@@ -61,9 +61,8 @@ def start(file_name):
 
     print("Exh. Sol. : ", exh_sol, " ", exh_set)            # print solutions
     print("Heu. Sol. : ", heu_sol, " ", heu_set)
+    print()
 
-
-
-start('input2.txt')
 start('input.txt')
+start('input2.txt')
 start('input3.txt')
