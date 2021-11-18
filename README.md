@@ -1,5 +1,10 @@
-# Knapsack-project
-The Knapsack Problem is defined as follows:  A thief robbing a store findsnitems.  Theith item isworthvidollars and weighswipounds, whereviandwiare positive integers.  The thief wants totake as valuable a load as possible, but can carry at mostWpounds in his/her knapsack, for someintegerW.  Which items should the thief steal?
+__  __                  ______  
+_ \/ /_____________________  /__
+__  /__  __ \_  __ \  _ \_  //_/
+_  / _  / / /  / / /  __/  ,<   
+/_/  /_/ /_//_/ /_/\___//_/|_|  
+                                
+
 
 # Solution Methods
 
